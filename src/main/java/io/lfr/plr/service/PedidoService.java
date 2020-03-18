@@ -18,4 +18,8 @@ public class PedidoService {
     public Pedido buscarPedido(Integer id){
         return pedidoRepository.findById(id).orElseThrow(PedidoNotFoundException::new);
     }
+
+    public Pedido criarPedido(Pedido pedido) {
+        return pedidoRepository.save(pedido);
+    }
 }
